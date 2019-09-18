@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Transactional
-public interface ReservationRepository extends JpaRepository<Reservation, String> {
+public interface ReservationRepository extends JpaRepository<Reservation, Long> {
 
     @Query("select reservation from Reservation  reservation where reservation.userId=:userId")
     List<Reservation> findReservationByUserId(@Param("userId") String userId);

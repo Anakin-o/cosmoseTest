@@ -19,7 +19,7 @@ public class ReservationServiceImpl implements ReservationService {
     }
 
     @Override
-    public void cancelReservation(String reservationId) {
+    public void cancelReservation(Long reservationId) {
         Reservation reservation = reservationRepository.findOne(reservationId);
         reservation.setStatus(false);
         reservationRepository.save(reservation);

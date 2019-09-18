@@ -7,5 +7,5 @@ import java.util.List;
 public interface ReservationService {
     List<Reservation> getReservationByUserId(String userId);
 
-    void cancelReservation(String reservationId);
+    void cancelReservation(Long reservationId);
 }

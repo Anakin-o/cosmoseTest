@@ -21,7 +21,7 @@ public class ReservationController {
     }
 
     @RequestMapping(value = "/cancel")
-    public void cancelReservation(String reservationId) {
+    public void cancelReservation(Long reservationId) {
         reservationService.cancelReservation(reservationId);
     }
 
