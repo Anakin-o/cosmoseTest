@@ -1,4 +1,4 @@
-package com.didispace.web;
+package com.didispace.controller;
 
 import com.didispace.entity.Reservation;
 import com.didispace.service.ReservationService;

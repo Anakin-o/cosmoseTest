@@ -1,4 +1,4 @@
-package com.didispace.web;
+package com.didispace.controller;
 
 import com.didispace.entity.Customer;
 import com.didispace.service.CustomerService;

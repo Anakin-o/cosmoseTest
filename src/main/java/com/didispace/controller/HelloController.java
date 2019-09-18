@@ -1,4 +1,4 @@
-package com.didispace.web;
+package com.didispace.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

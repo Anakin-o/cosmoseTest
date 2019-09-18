@@ -1,4 +1,4 @@
-package com.didispace.web;
+package com.didispace.controller;
 
 import com.didispace.entity.Room;
 import com.didispace.model.RoomSearchCriteria;

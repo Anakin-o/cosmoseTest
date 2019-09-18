@@ -1,7 +1,6 @@
 package com.didispace.repository;
 
 import com.didispace.entity.Room;
-import com.didispace.model.RoomSearchCriteria;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
