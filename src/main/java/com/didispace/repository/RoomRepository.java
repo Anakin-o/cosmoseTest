@@ -14,12 +14,15 @@ import java.util.List;
 @Transactional
 public interface RoomRepository extends JpaRepository<Room, String> {
     @Query(value = "select room from Room room where room.city=:city " +
-            "and room.price >= :minPrice and room.price<=:maxPrice")
-//            " and not exists (select 1 from Reservation reservation where reservation.room_id=room.roomId and " +
-//            "(reservation.startTime >= :startTime and reservation.startTime <=:endTime)or " +
-//            "(reservation.endTime >= :startTime and reservation.endTime <=:endTime)" +
-//            "and reservation.status=true )", nativeQuery = true)
+            "and room.price >= :minPrice and room.price<=:maxPrice" +
+            " and not exists (select 1 from Reservation reservation where reservation.roomId=room.roomId and " +
+            "(reservation.startTime >= :startTime and reservation.startTime <=:endTime)or " +
+            "(reservation.endTime >= :startTime and reservation.endTime <=:endTime)" +
+            "and reservation.status=true )")
     List<Room> searchAvailableRoom(@Param("city") String city,
                                    @Param("maxPrice") BigDecimal maxPrice,
-                                   @Param("minPrice") BigDecimal minPrice);
+                                   @Param("minPrice") BigDecimal minPrice,
+                                   @Param("startTime") Date startTime,
+                                   @Param("endTime") Date endTime
+    );
 }
