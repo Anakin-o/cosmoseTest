@@ -17,7 +17,7 @@ public class RoomServiceImpl implements RoomService {
 
     @Override
     public List<Room> getAvailableRoom(RoomSearchCriteria roomSearchCriteria) {
-        List<Room> roomList = roomRepository.searchAvailableRoom(roomSearchCriteria.getCity(), roomSearchCriteria.getMaxPrice(), roomSearchCriteria.getMinPrice());
+        List<Room> roomList = roomRepository.searchAvailableRoom(roomSearchCriteria.getCity(), roomSearchCriteria.getMaxPrice(), roomSearchCriteria.getMinPrice(), roomSearchCriteria.getStartTime(), roomSearchCriteria.getEndTime());
         return roomList;
     }
 }
