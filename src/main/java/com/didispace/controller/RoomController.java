@@ -16,7 +16,7 @@ public class RoomController {
 
     @ResponseBody
     @RequestMapping(value = "/search",method = RequestMethod.POST)
-    public List<Room> searchRoom(@RequestBody RoomSearchCriteria roomSearchCriteria) {
+    public List<Room> search(@RequestBody RoomSearchCriteria roomSearchCriteria) {
         return roomService.getAvailableRoom(roomSearchCriteria);
     }
 

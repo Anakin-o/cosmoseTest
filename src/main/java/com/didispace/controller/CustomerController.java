@@ -14,7 +14,7 @@ public class CustomerController {
 
     @ResponseBody
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public void searchReservation(@RequestBody Customer customer) {
+    public void register(@RequestBody Customer customer) {
         customerService.register(customer);
     }
 

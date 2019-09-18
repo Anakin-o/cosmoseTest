@@ -16,12 +16,12 @@ public class ReservationController {
 
     @ResponseBody
     @RequestMapping(value = "/search", method = RequestMethod.GET)
-    public List<Reservation> searchReservation(String userId) {
+    public List<Reservation> search(String userId) {
         return reservationService.getReservationByUserId(userId);
     }
 
     @RequestMapping(value = "/cancel")
-    public void cancelReservation(Long reservationId) {
+    public void cancel(Long reservationId) {
         reservationService.cancelReservation(reservationId);
     }
 
