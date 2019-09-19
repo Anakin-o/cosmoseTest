@@ -11,9 +11,9 @@ import java.util.Date;
 import java.util.List;
 
 @Transactional
-public interface RoomRepository extends JpaRepository<Room, String> {
-    @Query(value = "select room from Room room where room.city=:city " +
-            "and room.price >= :minPrice and room.price<=:maxPrice" +
+public interface RoomRepository extends JpaRepository<Room, Long> {
+    @Query(value = "select room from Room room where room.city=:city" +
+            " and room.price >= :minPrice and room.price<=:maxPrice" +
             " and not exists (select 1 from Reservation reservation where reservation.roomId=room.roomId and " +
             "(reservation.startTime >= :startTime and reservation.startTime <=:endTime)or " +
             "(reservation.endTime >= :startTime and reservation.endTime <=:endTime)" +
@@ -24,4 +24,10 @@ public interface RoomRepository extends JpaRepository<Room, String> {
                                    @Param("startTime") Date startTime,
                                    @Param("endTime") Date endTime
     );
+
+    @Query(value = "select count(1) from Reservation reservation where reservation.room_Id=:roomId and " +
+            "(reservation.start_Time >= :startTime and reservation.start_Time <=:endTime)or " +
+            "(reservation.end_Time >= :startTime and reservation.end_Time <=:endTime)" +
+            "and reservation.status=1", nativeQuery = true)
+    Integer validateRoom(@Param("roomId") String roomId, @Param("startTime") Date startTime, @Param("endTime") Date endTime);
 }
