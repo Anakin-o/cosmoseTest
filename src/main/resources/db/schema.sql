@@ -7,7 +7,7 @@ PASSWORD varchar(100),
 );
 
 create table if not exists reservation (
-RESERVATION_ID integer not null primary key,
+RESERVATION_ID bigint not null primary key,
 END_TIME TIMESTAMP(23, 10),
 ROOM_ID varchar(10),
 START_TIME TIMESTAMP(23, 10),
