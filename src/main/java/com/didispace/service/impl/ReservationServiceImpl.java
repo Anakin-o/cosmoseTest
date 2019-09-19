@@ -48,7 +48,7 @@ public class ReservationServiceImpl implements ReservationService {
     }
 
     /**
-     * Check if a room has been reserved for a given time period
+     * Check if a room has been reserved for a given time period,Also we can do more validation here if it is necessary.
      *
      * @param reserve
      * @return
